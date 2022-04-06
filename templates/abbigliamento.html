@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <title>Titolo pagina sito web</title>
+    <link href="pagina.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="https://thumbs.dreamstime.com/b/skateboard-shop-badge-emblem-design-vector-skateboard-shop-badge-emblem-design-166492408.jpg" />
+        <h1>SKATEBOARD</h1>
+        <h2>SKATE</h2>
+    </header>
+
+    <nav>
+        <ul>
+            <li> <a href="pagina1.html"><b>BACK</b></a></li>
+            <li><a href="pagina12.html">Magliette</a></li>
+            <li><a href="#">viti e bulloni</a> </li>
+        </ul>
+    </nav>
+    <style>
+        ul {
+            text-align: left;
+            display: inline;
+            margin: 0;
+            padding: 15px 4px 17px 0;
+            list-style: none;
+        }
+        
+        ul li {
+            font: bold 12px/18px sans-serif;
+            display: inline-block;
+            margin-right: -4px;
+            position: relative;
+            padding: 15px 20px;
+            background: #FFC163;
+            cursor: pointer;
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -ms-transition: all 0.2s;
+            -o-transition: all 0.2s;
+            transition: all 0.2s;
+        }
+        
+        ul li a {
+            color: #000;
+        }
+        
+        ul li:hover {
+            background: #555;
+            color: #fff;
+        }
+        
+        ul li ul {
+            padding: 0;
+            position: absolute;
+            top: 48px;
+            left: 0;
+            width: 150px;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transiton: opacity 0.2s;
+            -moz-transition: opacity 0.2s;
+            -ms-transition: opacity 0.2s;
+            -o-transition: opacity 0.2s;
+            -transition: opacity 0.2s;
+        }
+        
+        ul li ul li {
+            background: #555;
+            display: block;
+            color: #fff;
+            text-shadow: 0 -1px 0 #000;
+        }
+        
+        ul li ul li:hover {
+            background: #666;
+        }
+        
+        ul li:hover ul {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</body>
+
+</html>

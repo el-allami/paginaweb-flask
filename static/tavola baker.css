@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container p {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.df-img {
+    width: 400px;
+    height: 500px
+}

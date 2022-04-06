@@ -1,0 +1,59 @@
+Il lun 8 nov 2021, 12:02 giuseppe, capozzi
+<capozzi.giuseppe@iisgalvanimi.edu.it> ha scritto:
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+    <HTML>
+
+    <HEAD>
+        <!--
+        <script type="text/javascript" language="Javascript">
+            
+            function mostraMenu(menuCorrente) {
+                if (document.getElementById) {
+                    questoMenu = document.getElementById(menuCorrente).style
+                    if (questoMenu.display == "block") {
+                        questoMenu.display = "none"
+                    } else {
+                        questoMenu.display = "block"
+                    }
+                    return false
+                } else {
+                    return true
+                }
+            }
+           
+        </script>
+        -->
+        <!-- Fine Sezione JavaScript -->
+        <style type="text/css">
+            .menu {
+                display: none;
+                margin-left: 20px
+            }
+        </style>
+    </HEAD>
+
+    <BODY>
+        <br> Un semplice ma funzionale script per un menù con categorie e sottocategorie a scomparsa.<br>
+        <br>
+        <br>
+        <h3>
+            <a href="pagina1.html" onclick="return mostraMenu('menu1')">Primo menu</a>
+        </h3>
+        <div class="menu" id="menu1">
+            <a href="http://www.allwebfree.it/">ALLWEB free</a><br /> secondo
+            <br /> terzo
+            <br /> quarto
+            <br> quinto
+        </div>
+        <h3>
+            <a href="pagina2.html" onclick="return mostraMenu('menu2')">Secondo menu</a>
+        </h3>
+        <div class="menu" id="menu2">
+            primo<br /> secondo
+            <br /> terzo
+            <br> quarto
+            <br> quinto
+        </div>
+    </BODY>
+
+    </HTML>
