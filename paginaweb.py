@@ -5,7 +5,9 @@ app = Flask(__name__)
 def HomeP():
     return render_template("pagina1.html")
 
-
+@app.route('/back', methods=['GET'])
+def HomeP():
+    return render_template("pagina1.html")
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=3245, debug=True)
