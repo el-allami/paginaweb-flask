@@ -10,6 +10,7 @@ section {
     display: block;
 }
 
+
 body {
     width: 1200px;
     margin: 0 auto 0 auto;
@@ -45,6 +46,16 @@ header h2 {
     font-size: 20px;
 }
 
+nav {
+    width: 1180px;
+    height: 48px;
+    background-color: #9B5D00;
+    margin: 10px 10px 0 10px;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
 article {
     width: 760px;
     height: 6250px;
@@ -56,6 +67,7 @@ article {
     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
+
 
 article header {
     width: 740px;
@@ -112,6 +124,8 @@ footer {
     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
+
+
 
 ul {
     text-align: left;
