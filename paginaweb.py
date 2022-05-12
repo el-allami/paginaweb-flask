@@ -1,9 +1,46 @@
 from flask import Flask, render_template, send_file, make_response, url_for, Response, request, redirect
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
-def HomeP():
-    return render_template("pagina1.html")
+import pandas as pd
+dati = pd.read_csv("/workspace/paginaweb-flask/static/file/dati.csv")
+
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    if request.method == 'GET':
+        return render_template('login.html')
+    elif request.method == 'POST':
+        psw = request.form.get("pwd")
+        email = request.form.get("email")
+        print(psw, email)
+
+    for _, r in dati.iterrows():
+        if email == r['email'] and psw == r['psw']:
+            return render_template("pagina1.html")
+
+    return render_template("errore.html")
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'GET':
+        return render_template('register.html')
+    else:
+        name = request.form.get("name")
+        surname = request.form.get("surname")
+        psw = request.form.get("pwd")
+        cpsw = request.form.get("cpwd")
+        email = request.form.get("email")
+
+        utente = [{"name": name, "surname": surname,
+                   "psw": psw, "email": email}]
+
+        # controllo password
+        if cpsw != psw:
+            return 'le password non corrispondono'
+        else:
+            dati_append = dati.append(utente, ignore_index=True)
+            dati_append.to_csv('/workspace/paginaweb-flask/static/file/dati.csv', index=False)
+            return render_template('login.html', name=name, surname=surname, psw=psw, utente=utente, email=email)
 
 @app.route('/HOME', methods=['GET'])
 def Home():
