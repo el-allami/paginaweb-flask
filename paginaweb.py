@@ -2,8 +2,13 @@ from flask import Flask, render_template, send_file, make_response, url_for, Res
 app = Flask(__name__)
 
 import pandas as pd
-dati = pd.read_csv("/workspace/paginaweb-flask/static/file/dati.csv")
+import geopandas as gpd
+import folium
 
+dati = pd.read_csv("/workspace/paginaweb-flask/static/file/dati.csv")
+skateparkdf= pd.read_csv("/workspace/paginaweb-flask/static/file/skatepark.csv")
+skatepark= gpd.GeoDataFrame(skateparkdf,geometry=gpd.points_from_xy(skateparkdf.LON,skateparkdf.LAT))
+skatepark=skatepark.set_crs(4326)
 @app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
@@ -89,6 +94,13 @@ def pagina11():
 @app.route('/pagina12', methods=['GET'])
 def pagina12():
     return render_template("pagina12.html")
+
+@app.route('/skatepark', methods=['GET'])
+def skatepark():
+    map = folium.Map(location=[45.490943,9.2417171],zoom_start=12,tiles="openstreetmap")
+    for _,row in skatepark:
+        folium.Marker(location=[row["lat"],row["lon"]],popup=row["SKATE PARK"]).add_to(map)
+    return render_template("mappa.html",map=map._repr_html_())
 
 @app.route('/come nasce lo skate1', methods=['GET'])
 def comenasceloskate1():
