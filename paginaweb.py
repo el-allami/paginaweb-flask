@@ -97,10 +97,17 @@ def pagina12():
 
 @app.route('/skatepark', methods=['GET'])
 def skatepark():
+    skateparkdf= pd.read_csv("/workspace/paginaweb-flask/static/file/skatepark.csv")
+    skatepark= gpd.GeoDataFrame(skateparkdf,geometry=gpd.points_from_xy(skateparkdf.LON,skateparkdf.LAT))
+    skatepark=skatepark.set_crs(4326)
+
     map = folium.Map(location=[45.490943,9.2417171],zoom_start=12,tiles="openstreetmap")
-    for _,row in skatepark:
-        folium.Marker(location=[row["lat"],row["lon"]],popup=row["SKATE PARK"]).add_to(map)
-    return render_template("mappa.html",map=map._repr_html_())
+    for i in range(0,len(skatepark)):
+        folium.Marker(
+        location=[skatepark.iloc[i]['LAT'], skatepark.iloc[i]['LON']],
+        popup=skatepark.iloc[i][['SKATEPARK', 'LAT','LON']],
+        ).add_to(map)
+    return render_template("mappa.html", map = map._repr_html_())
 
 @app.route('/come nasce lo skate1', methods=['GET'])
 def comenasceloskate1():
@@ -295,4 +302,4 @@ def truckventure():
     return render_template("truck venture.html")
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=3245, debug=True)
+  app.run(host='0.0.0.0', port=3246, debug=True)
