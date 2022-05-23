@@ -109,6 +109,20 @@ def skatepark():
         ).add_to(map)
     return render_template("mappa.html", map = map._repr_html_())
 
+@app.route('/skateshop', methods=['GET'])
+def skateshop():
+    skateshopdf= pd.read_csv("/workspace/paginaweb-flask/static/file/skateshop.csv")
+    skateshop= gpd.GeoDataFrame(skateshopdf,geometry=gpd.points_from_xy(skateshopdf.LON,skateshopdf.LAT))
+    skateshop=skateshop.set_crs(4326)
+
+    map = folium.Map(location=[45.490943,9.2417171],zoom_start=12,tiles="openstreetmap")
+    for i in range(0,len(skateshop)):
+        folium.Marker(
+        location=[skateshop.iloc[i]['LAT'], skateshop.iloc[i]['LON']],
+        popup=skateshop.iloc[i][['SKATESHOP', 'LAT','LON']],
+        ).add_to(map)
+    return render_template("mappa.html", map = map._repr_html_())
+
 @app.route('/come nasce lo skate1', methods=['GET'])
 def comenasceloskate1():
     return render_template("come nasce lo skate1.html")
