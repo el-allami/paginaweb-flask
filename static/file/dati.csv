@@ -1,2 +1,4 @@
-,Unnamed: 0,name,surname,psw,email
-0,,as,as,as,as@gmail.com
+,Unnamed: 0.1,Unnamed: 0,name,surname,psw,email
+0,0.0,0.0,a,a,a,a@gmail.com
+1,1.0,,c,c,c,c@gmail.com
+2,,,d,d,d,d@gmail.com

@@ -5,7 +5,7 @@ import pandas as pd
 import geopandas as gpd
 import folium
 
-
+dati = pd.read_csv("/workspace/paginaweb-flask/static/file/dati.csv")
 skateparkdf= pd.read_csv("/workspace/paginaweb-flask/static/file/skatepark.csv")
 skatepark= gpd.GeoDataFrame(skateparkdf,geometry=gpd.points_from_xy(skateparkdf.LON,skateparkdf.LAT))
 skatepark=skatepark.set_crs(4326)
@@ -17,14 +17,13 @@ def login():
         psw = request.form.get("pwd")
         email = request.form.get("email")
         print(psw, email)
-
+    
+    global dati
     for _, r in dati.iterrows():
         if email == r['email'] and psw == r['psw']:
             return render_template("pagina1.html")
 
     return render_template("errore.html")
-
-dati = pd.read_csv("/workspace/paginaweb-flask/static/file/dati.csv")
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -44,8 +43,9 @@ def register():
         if cpsw != psw:
             return 'le password non corrispondono'
         else:
-            dati_append = dati.append(utente, ignore_index=True)
-            dati_append.to_csv('/workspace/paginaweb-flask/static/file/dati.csv')
+            global dati
+            dati = dati.append(utente, ignore_index=True)
+            dati.to_csv('/workspace/paginaweb-flask/static/file/dati.csv')
             return render_template('login.html', name=name, surname=surname, psw=psw, utente=utente, email=email)
 
 @app.route('/HOME', methods=['GET'])
