@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link href="static/pagina2.css" rel="stylesheet">
-        <link rel="stylesheet" href="static/tavola baker.css">
-        <link rel="stylesheet" href="static/grid container {.css">
-    </head>
+<html>
+<head>
+<title>Form-Login</title>
+<link rel="stylesheet" href="/static/login.css" type="text/css" />
+</head>
 <body>
-        <form action="/" method="POST">
-
-            <p>Email<input type="email" name="email" pattern=".+@gmail\.com" size="30" required></p>
-            <p>Password <input type = "password" name ="pwd" required/></p>
-            <p><input type = "submit" value = "Submit"/></p>
-            <p>Prima volta? Effettua la <a href="/register">registrazione!</a>!</p>
-        </form>
+<div id="login"><div id="titolologin"><label>Login</label></div>
+<form action="#" class="formlogin" method="post">
+<label>Usename:</label>
+<input type="email" name="email" pattern=".+@gmail\.com" size="30" required>
+<label>Password:</label>
+<input type = "password" name ="pwd" required/>
+<a href="/register"><input type="button" class="button" id="register" name="Register" value="Register" /></a>
+<input type="submit" class="button" name="submit" value="Login" />
+</form>
+</div>
 </body>
 </html>

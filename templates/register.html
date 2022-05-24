@@ -1,9 +1,24 @@
-<form action="/register" method = "POST">
-    <p>name <input type = "text" name = "name" required/></p>
-    <p>surname <input type = "text" name = "surname" required/></p>
-    <p>Email<input type="email" name="email" pattern=".+@gmail\.com", size="30" required></p>
-    <p>Password <input type = "password" name = "pwd" required/></p>
-    <p>Confirm Password <input type = "password" name = "cpwd" required/></p>
-    <p><input type = "submit" value = "Submit"/></p>
-    <p><a href="/">Hai già effettuato l'accesso?<br>Effettua il Login!</a></p>
+<html>
+<head>
+<title>Form-Register</title>
+<link rel="stylesheet" href="/static/login.css" type="text/css" />
+</head>
+<body>
+<div id="login"><div id="titolologin"><label>Register</label></div>
+<form action="#" class="formlogin" method="post">
+<label>name:</label>
+<input type = "text" name = "name" required/></p>
+<label>surname:</label>
+<input type = "text" name = "surname" required/></p>
+<label>Email:</label>
+<input type="email" name="email" pattern=".+@gmail\.com", size="30" required></p>
+<label>Password:</label>
+<input type = "password" name = "pwd" required/></p>
+<label>Confirm Password:</label>
+<input type = "password" name = "cpwd" required/></p>
+<a href="/"><input type="button" class="button" id="register" name="Register" value="HOME" /></a>
+<input type="submit" class="button" name="submit" value="Login" />
 </form>
+</div>
+</body>
+</html>

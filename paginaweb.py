@@ -316,4 +316,4 @@ def truckventure():
     return render_template("truck venture.html")
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=3246, debug=True)
+  app.run(host='0.0.0.0', port=3247, debug=True)
