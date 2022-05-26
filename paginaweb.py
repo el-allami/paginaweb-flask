@@ -6,6 +6,8 @@ import geopandas as gpd
 import folium
 
 
+caschi1 = pd.read_csv('static/file/caschi.csv')
+
 skateparkdf= pd.read_csv("/workspace/paginaweb-flask/static/file/skatepark.csv")
 skatepark= gpd.GeoDataFrame(skateparkdf,geometry=gpd.points_from_xy(skateparkdf.LON,skateparkdf.LAT))
 skatepark=skatepark.set_crs(4326)
@@ -199,8 +201,13 @@ def ceraskate():
     return render_template("cera skate.html")
 
 @app.route('/caschi', methods=['GET'])
-def caschi1():
-    return render_template("caschi.html")
+def caschi12():
+    return render_template("caschi.html",risultato=caschi1['foto'].to_list())
+
+@app.route('/caschi_risultato/<foto>', methods=['GET'])
+def caschi2(foto):
+    cas=caschi[caschi['foto']==foto]
+    return render_template("caschi ris.html",foto=list(cas.foto),modello=list(cas.modello),prezzo=list(cas.prezzo))
 
 @app.route('/ginocchiere', methods=['GET'])
 def ginocchiere():
