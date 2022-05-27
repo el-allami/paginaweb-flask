@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,48 +10,21 @@
     <link rel="stylesheet" href="static/tavola baker.css">
     <link rel="stylesheet" href="static/grid container {.css">
 </head>
-
+<body>
 <nav>
     <ul>
-        <li><a href="HOME"><b>HOME</b></a></li>
+        <li><a href="/HOME"><b>HOME</b></a></li>
     </ul>
 </nav>
 
-<body>
+
     <div class="container">
         <div class="grid-container">
-            <div>
-                <img src="static/immagini/cera1.jpg" alt="error" class="df-img">
-                <p><h2>Santa-Cruz</h2><br>Classic Dot Skate Wax Box of 12, Cera da skate, natural<br>prezzo:€ 69,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/cera2.jpg" alt="error" class="df-img">
-                <p><h2>Toy-Machine</h2> <br>Curb Wax, Cera da skate, purple<br>prezzo: € 7,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/cera3.jpg" alt="error" class="df-img">
-                <p><h2>Shortys </h2><br>Curb Candy Wax In A Box, Cera da skate, red<br>prezzo: € 9,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/cera4.jpg" alt="error" class="df-img">
-                <p><h2>Grizzly</h2><br> Grease, Cera da skate, royal<br>prezzo:  € 13,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/cera5.jpg" alt="error" class="df-img">
-                <p><h2>Cortina Bearing</h2><br> Playboy Bunny, Cera da skate, red<br>prezzo: € 11,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/cera6.jpg" alt="error" class="df-img">
-                <p><h2>Almost</h2><br>Puck, Cera da skate, red<br>prezzo: € 7,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/cera7.jpg" alt="error" class="df-img">
-                <p><h2>Independent</h2><br>Kurb Killer Curb Wax, Cera da skate, red<br>prezzo: € 13,99</p>
-            </div>
-
+            
+            {%for image in risultato%}
+            <a href="/ceraskate_ris/{{image}}"><img src="static/immagini/cera/{{image}}" /></href>
+            {%endfor%}
         </div>
-
-
     </div>
 </body>
 <footer>

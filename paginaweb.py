@@ -7,6 +7,9 @@ import folium
 
 
 caschi1 = pd.read_csv('static/file/caschi.csv')
+ceraskate1= pd.read_csv('static/file/ceraskate.csv')
+crashpants1= pd.read_csv('static/file/crashpants.csv')
+cuscinettibones1= pd.read_csv('static/file/cuscinetti  bones.csv')
 
 skateparkdf= pd.read_csv("/workspace/paginaweb-flask/static/file/skatepark.csv")
 skatepark= gpd.GeoDataFrame(skateparkdf,geometry=gpd.points_from_xy(skateparkdf.LON,skateparkdf.LAT))
@@ -198,7 +201,12 @@ def tool():
 
 @app.route('/cera skate', methods=['GET'])
 def ceraskate():
-    return render_template("cera skate.html")
+    return render_template("cera skate.html",risultato=ceraskate1['foto'].to_list())
+
+@app.route("/ceraskate_ris/<foto>", methods=["GET"])
+def dettaglio_cera(foto):
+    cera=ceraskate1[ceraskate1['foto']==foto]
+    return render_template("ceraskate_ris.html",modello=list(cera.modello),prezzo=list(cera.prezzo),foto=list(cera.foto))
 
 @app.route('/caschi', methods=['GET'])
 def caschi12():
@@ -215,7 +223,12 @@ def ginocchiere():
 
 @app.route('/crashpants', methods=['GET'])
 def crashpants():
-    return render_template("crashpants.html")
+    return render_template("crashpants.html",risultato=crashpants1['foto'].to_list())
+
+@app.route("/crashpants_ris/<foto>", methods=["GET"])
+def dettaglio_crashpants(foto):
+    crash=crashpants1[crashpants1['foto']==foto]
+    return render_template("crashpants_ris.html",modello=list(crash.modello),prezzo=list(crash.prezzo),foto=list(crash.foto))
 
 @app.route('/polsiere', methods=['GET'])
 def polsiere():
@@ -231,7 +244,12 @@ def setupprotezioni():
 
 @app.route('/cuscinetti  bones', methods=['GET'])
 def cuscinettibones():
-    return render_template("cuscinetti  bones.html")
+    return render_template("cuscinetti  bones.html",risultato=cuscinettibones1['foto'].to_list())
+
+@app.route("/cuscinettibones_ris/<foto>", methods=["GET"])
+def dettaglio_bones(foto):
+    bones1=cuscinettibones1[cuscinettibones1['foto']==foto]
+    return render_template("cuscinettibones_ris.html",modello=list(bones1.modello),prezzo=list(bones1.prezzo),foto=list(bones1.foto))
 
 @app.route('/cuscinetti bronsor', methods=['GET'])
 def cuscinettibronsor():
