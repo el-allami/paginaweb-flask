@@ -204,10 +204,10 @@ def ceraskate():
 def caschi12():
     return render_template("caschi.html",risultato=caschi1['foto'].to_list())
 
-@app.route('/caschi_risultato/<foto>', methods=['GET'])
-def caschi2(foto):
-    cas=caschi[caschi['foto']==foto]
-    return render_template("caschi ris.html",foto=list(cas.foto),modello=list(cas.modello),prezzo=list(cas.prezzo))
+@app.route("/caschi_ris/<foto>", methods=["GET"])
+def dettaglio_caschi(foto):
+    cas=caschi1[caschi1['foto']==foto]
+    return render_template("caschi_ris.html",modello=list(cas.modello),prezzo=list(cas.prezzo),foto=list(cas.foto))
 
 @app.route('/ginocchiere', methods=['GET'])
 def ginocchiere():

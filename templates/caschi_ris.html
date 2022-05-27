@@ -6,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="static/pagina2.css" rel="stylesheet">
-    <link rel="stylesheet" href="static/tavola baker.css">
-    <link rel="stylesheet" href="static/grid container {.css">
+    <link href="../static/pagina2.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/tavola baker.css">
+    <link rel="stylesheet" href="../static/grid container {.css">
 </head>
-<body>
 <nav>
     <ul>
         <li><a href="/HOME"><b>HOME</b></a></li>
@@ -18,15 +17,19 @@
 </nav>
 
 
+<body>
     <div class="container">
-        <div class="grid-container">
-            
-            {%for image in risultato%}
-            <a href="/caschi_ris/{{image}}"><img src="static/immagini/casco/{{image}}" /></href>
-            {%endfor%}
-        </div>
+            <div class="grid-container">
+                
+                <img  src="../static/immagini/casco/{{foto[0]}}"/>
+                <br>
+                {{modello[0]}}
+                <br>
+                {{prezzo[0]}}
+            </div>
     </div>
 </body>
+
 
 <footer>
     <p> El Allami Ali  - elallami.ali.nasr@iisgalvanimi.edu.it</p>
