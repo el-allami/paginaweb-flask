@@ -13,6 +13,7 @@ cuscinettibones1= pd.read_csv('static/file/cuscinettibones.csv')
 cuscinettibronsor1= pd.read_csv('static/file/cuscinettibronsor.csv')
 cuscinettiindipendent1=pd.read_csv('static/file/cuscinettiindipendent.csv')
 ginocchiere1=pd.read_csv('static/file/ginocchiere.csv')
+gomitiere1=pd.read_csv('static/file/gomitiere.csv')
 
 skateparkdf= pd.read_csv("/workspace/paginaweb-flask/static/file/skatepark.csv")
 skatepark= gpd.GeoDataFrame(skateparkdf,geometry=gpd.points_from_xy(skateparkdf.LON,skateparkdf.LAT))
@@ -244,7 +245,12 @@ def polsiere():
     
 @app.route('/gomitiere', methods=['GET'])
 def gomitiere():
-    return render_template("gomitiere.html")
+     return render_template("gomitiere.html",risultato=gomitiere1['foto'].to_list())
+
+@app.route("/gomitiere_ris/<foto>", methods=["GET"])
+def dettaglio_gomitiere(foto):
+    gomit=gomitiere1[gomitiere1['foto']==foto]
+    return render_template("gomitiere_ris.html",modello=list(gomit.modello),prezzo=list(gomit.prezzo),foto=list(gomit.foto))
 
 @app.route('/setup protezioni', methods=['GET'])
 def setupprotezioni():

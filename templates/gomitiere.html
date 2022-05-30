@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,63 +10,21 @@
     <link rel="stylesheet" href="static/tavola baker.css">
     <link rel="stylesheet" href="static/grid container {.css">
 </head>
-
+<body>
 <nav>
     <ul>
         <li><a href="HOME"><b>HOME</b></a></li>
     </ul>
 </nav>
 
-<body>
+
     <div class="container">
         <div class="grid-container">
-            <div>
-                <img src="static/immagini/gomitiere1.jpg" alt="error" class="df-img">
-                <p>Elbow Pads All Terrain, Gomitiere, black<br>prezzo: € 44,99 </p><br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/gomitiere2.jpg" alt="error" class="df-img">
-                <p>Elbow Pads Ace, Gomitiere, black<br>prezzo: € 54,99</p><br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/gomitiere3.jpg" alt="error" class="df-img">
-                <p>Elbow-Guard Tahoe A 2.0, Gomitiere, black<br>prezzo: € 79,99 </p><br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/gomitiere4.jpg" alt="error" class="df-img">
-                <p>Elbow Pads All Ground II, Gomitiere, black<br>prezzo: € 39,99 </p><br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/gomitiere5.jpg" alt="error" class="df-img">
-                <p>Elbow Pads Scout A, Gomitiere, ripped black<br>prezzo: € 59,99 </p><br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/gomitiere6.jpg" alt="error" class="df-img">
-                <p>Elbowsleeve Dermis A, Gomitiere, black<br>prezzo: € 69,99</p><br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/gomitiere7.jpg" alt="error" class="df-img">
-                <p>Elbow Pads Roller Derby 3.0, Gomitiere, black<br>prezzo: € 54,99 </p><br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/gomitiere8.jpg" alt="error" class="df-img">
-                <p>Elbow-Sleeve Joint, Gomitiere, black <br>prezzo: € 64,99</p><br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/gomitiere9.jpg" alt="error" class="df-img">
-                <p>Elbow Pads Scout A, Gomitiere, black<br>prezzo: € 59,99</p><br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/gomitiere10.jpg" alt="error" class="df-img">
-                <p>Dermis A Youth Elbow-Sleeve, Gomitiere, black<br>prezzo: € 54,99 </p><br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/gomitiere11.jpg" alt="error" class="df-img">
-                <p>Bike Elbow Pads Youth, Gomitiere, black<br>prezzo: € 39,99 </p><br>size: S/M/L/XL</p>
-            </div>
+            
+            {%for image in risultato%}
+            <a href="/gomitiere_ris/{{image}}"><img src="static/immagini/gomitiere/{{image}}" /></href>
+            {%endfor%}
         </div>
-
-
     </div>
 </body>
 <footer>
