@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link href="static/pagina2.css" rel="stylesheet">
-        <link rel="stylesheet" href="static/tavola baker.css">
-        <link rel="stylesheet" href="static/grid container {.css">
-    </head>
-    
-    <nav>
-        <ul>
-            <li><a href="/pagina5"><b>TORNA INDIETRO</b></a></li>
-        </ul>
-    </nav>
-
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="static/pagina2.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/tavola baker.css">
+    <link rel="stylesheet" href="static/grid container {.css">
+</head>
 <body>
+<nav>
+    <ul>
+       <li><a href="/pagina5"><b>TORNA INDIETRO</b></a></li>
+    </ul>
+</nav>
+
+
     <div class="container">
         <div class="grid-container">
-            <div>
-                <img src="static/immagini/cuscinetti indipendent1.jpg" alt="error" class="df-img">
-                <p>GP-R Red, Cuscinetto a sfera, red<br>prezzo: € 18,99 </p>
-
-            </div>
-            <div>
-                <img src="static/immagini/cuscinetti indipendent2.jpg" alt="error" class="df-img">
-                <p>GP-B Black, Cuscinetto a sfera, black <br>prezzo: € 23,99</p>
-            </div>
-
+            
+            {%for image in risultato%}
+            <a href="/templates/cuscinettiindipendent_ris/{{image}}"><img src="static/immagini/cuscinetti indipendent/{{image}}" /></href>
+            {%endfor%}
         </div>
-
-
     </div>
 </body>
 <footer>

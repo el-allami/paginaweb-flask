@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,96 +10,21 @@
     <link rel="stylesheet" href="static/tavola baker.css">
     <link rel="stylesheet" href="static/grid container {.css">
 </head>
-
+<body>
 <nav>
     <ul>
         <li><a href="HOME"><b>HOME</b></a></li>
     </ul>
 </nav>
 
-<body>
+
     <div class="container">
         <div class="grid-container">
-            <div>
-                <img src="static/immagini/ginocchiere1.jpg" alt="error" class="df-img">
-                <p>Kneepad All-Terrain, Ginocchiere, black<br>prezzo: € 49,99 <br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere2.jpg" alt="error" class="df-img">
-                <p>Kneepad Force III, Ginocchiere, black <br>prezzo: € 99,99 <br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere3.jpg" alt="error" class="df-img">
-                <p>Knee-Shinguard Temper A 2.0, Ginocchiere, black<br>prezzo: € 129,99 <br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere4.jpg" alt="error" class="df-img">
-                <p>Knee Pads Force V A, Ginocchiere, black<br>prezzo: € 124,99 <br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere5.jpg" alt="error" class="df-img">
-                <p>Arctic Knee 2nd Skin A, Ginocchiere, black<br>prezzo: <br>size: € 74,99 S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere6.jpg" alt="error" class="df-img">
-                <p>Kneepad Wavesk8 A, Ginocchiere, black <br>prezzo: € 109,99<br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere7.jpg" alt="error" class="df-img">
-                <p>Knee Pads All Ground II, Ginocchiere, black<br>prezzo: € 49,99 <br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere8.jpg" alt="error" class="df-img">
-                <p>Knee Pads Force III A, Ginocchiere, black <br>prezzo: € 119,99 <br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere9.jpg" alt="error" class="df-img">
-                <p>Dermis Pro A Knee-Sleeve, Ginocchiere, black<br>prezzo: € 99,99 <br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere10.jpg" alt="error" class="df-img">
-                <p>Knee Pads Force V, Ginocchiere, black <br>prezzo: € 114,99 <br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere11.jpg" alt="error" class="df-img">
-                <p>Knee Pads Roller Derby 3.0, Ginocchiere, black<br>prezzo: € 94,95 <br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere12.jpg" alt="error" class="df-img">
-                <p>Kneepads Sk8 DHP's, Ginocchiere, black<br>prezzo: € 119,99 <br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere13.jpg" alt="error" class="df-img">
-                <p>Knee-Shin Pads Youth, Ginocchiere, black<br>prezzo: € 44,99 <br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere14.jpg" alt="error" class="df-img">
-                <p>Kneeguard Valdez, Ginocchiere, black <br>prezzo: € 34,95<br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere15.jpg" alt="error" class="df-img">
-                <p>Kneeguard Tahoe Cap A, Ginocchiere, black <br>prezzo: € 124,95 <br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere16.jpg" alt="error" class="df-img">
-                <p>Kneepad Force III Youth, Ginocchiere, black <br>prezzo: € 89,99<br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere17.jpg" alt="error" class="df-img">
-                <p>Knee Pads Tahoe A, Ginocchiere, black <br>prezzo: € 99,99 <br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere18.jpg" alt="error" class="df-img">
-                <p>Knee-Sleeve Joint, Ginocchiere, black<br>prezzo: € 74,99<br>size: S/M/L/XL</p>
-            </div>
-            <div>
-                <img src="static/immagini/ginocchiere19.jpg" alt="error" class="df-img">
-                <p>Recaps Force III/V AD Plus, Ginocchiere, black<br>prezzo: € 29,95 <br>size: S/M/L/XL</p>
-            </div>
-
+            
+            {%for image in risultato%}
+            <a href="/ginocchiere_ris/{{image}}"><img src="static/immagini/ginocchiere/{{image}}" /></href>
+            {%endfor%}
         </div>
-
-
     </div>
 </body>
 <footer>

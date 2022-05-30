@@ -9,7 +9,10 @@ import folium
 caschi1 = pd.read_csv('static/file/caschi.csv')
 ceraskate1= pd.read_csv('static/file/ceraskate.csv')
 crashpants1= pd.read_csv('static/file/crashpants.csv')
-cuscinettibones1= pd.read_csv('static/file/cuscinetti  bones.csv')
+cuscinettibones1= pd.read_csv('static/file/cuscinettibones.csv')
+cuscinettibronsor1= pd.read_csv('static/file/cuscinettibronsor.csv')
+cuscinettiindipendent1=pd.read_csv('static/file/cuscinettiindipendent.csv')
+ginocchiere1=pd.read_csv('static/file/ginocchiere.csv')
 
 skateparkdf= pd.read_csv("/workspace/paginaweb-flask/static/file/skatepark.csv")
 skatepark= gpd.GeoDataFrame(skateparkdf,geometry=gpd.points_from_xy(skateparkdf.LON,skateparkdf.LAT))
@@ -219,7 +222,12 @@ def dettaglio_caschi(foto):
 
 @app.route('/ginocchiere', methods=['GET'])
 def ginocchiere():
-    return render_template("ginocchiere.html")
+   return render_template("ginocchiere.html",risultato=ginocchiere1['foto'].to_list())
+
+@app.route("/ginocchiere_ris/<foto>", methods=["GET"])
+def dettaglio_ginocchiere(foto):
+    ginocchiere2=ginocchiere1[ginocchiere1['foto']==foto]
+    return render_template("ginocchiere_ris.html",modello=list(ginocchiere2.modello),prezzo=list(ginocchiere2.prezzo),foto=list(ginocchiere2.foto))
 
 @app.route('/crashpants', methods=['GET'])
 def crashpants():
@@ -253,11 +261,21 @@ def dettaglio_bones(foto):
 
 @app.route('/cuscinetti bronsor', methods=['GET'])
 def cuscinettibronsor():
-    return render_template("cuscinetti bronsor.html")
+    return render_template("cuscinetti bronsor.html",risultato=cuscinettibronsor1['foto'].to_list())
+
+@app.route("/cuscinettibronsor_ris/<foto>", methods=["GET"])
+def dettaglio_bronsor(foto):
+    bronsor1=cuscinettibronsor1[cuscinettibronsor1['foto']==foto]
+    return render_template("cuscinettibronsor_ris.html",modello=list(bronsor1.modello),prezzo=list(bronsor1.prezzo),foto=list(bronsor1.foto))
 
 @app.route('/cuscinetti indipendent', methods=['GET'])
 def cuscinettiindipendent():
-    return render_template("cuscinetti indipendent.html")
+     return render_template("cuscinetti indipendent.html",risultato=cuscinettiindipendent1['foto'].to_list())
+
+@app.route("/templates/cuscinettiindipendent_ris/<foto>", methods=["GET"])
+def dettaglio_indipendent(foto):
+    indipendent1=cuscinettiindipendent1[cuscinettiindipendent1['foto']==foto]
+    return render_template("cuscinettiindipendent_ris.html",modello=list(indipendent1.modello),prezzo=list(indipendent1.prezzo),foto=list(indipendent1.foto))
 
 @app.route('/gommini bones', methods=['GET'])
 def gomminibones():
