@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,34 +10,25 @@
     <link rel="stylesheet" href="static/tavola baker.css">
     <link rel="stylesheet" href="static/grid container {.css">
 </head>
-
-<nav>
+<body>
+<nav> 
     <ul>
         <li><a href="/pagina10"><b>TORNA INDIETRO</b></a></li>
     </ul>
 </nav>
 
-<body>
+
     <div class="container">
         <div class="grid-container">
-            <div>
-                <img src="static/immagini/gommini bones1.jpg" alt="error" class="df-img">
-                <p>Bushings 96A Hardcore Hard Set Pack inkl.<br> Washer, Gommini, black<br>prezzo:€ 14,99 </p>
-            </div>
-            <div>
-                <br>
-            </div>
-            <div>
-                <img src="static/immagini/gommini bones2.jpg" alt="error" class="df-img">
-                <p>Bushings 81A Hardcore Soft Set Pack inkl. <br> Washer, Gommini, white<br>prezzo: € 14,99</p>
-            </div>
-
+            
+            {%for image in risultato%}
+            <a href="/gomminibones_ris/{{image}}"><img src="static/immagini/gommini bones/{{image}}" /></href>
+            {%endfor%}
         </div>
-
-
     </div>
 </body>
 <footer>
     <p> El Allami Ali  - elallami.ali.nasr@iisgalvanimi.edu.it</p>
   </footer>
 </html>
+

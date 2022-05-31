@@ -1,49 +1,32 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link href="static/pagina2.css" rel="stylesheet">
-        <link rel="stylesheet" href="static/tavola baker.css">
-        <link rel="stylesheet" href="static/grid container {.css">
-    </head>
-    
-    <nav>
-        <ul>
-            <li><a href="/pagina10"><b>TORNA INDIETRO</b></a></li>
-        </ul>
-    </nav>
-
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="static/pagina2.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/tavola baker.css">
+    <link rel="stylesheet" href="static/grid container {.css">
+</head>
 <body>
+<nav> 
+    <ul>
+        <li><a href="/pagina10"><b>TORNA INDIETRO</b></a></li>
+    </ul>
+</nav>
+
+
     <div class="container">
         <div class="grid-container">
-            <div>
-                <img src="static/immagini/gommini independent1.jpg" alt="error" class="df-img">
-                <p>Standard Cylinder Cushions Hard 94A, Gommini, black<br>prezzo: € 9,99 <p>
-            </div>
-            <div>
-                <img src="static/immagini/gommini independent2.jpg" alt="error" class="df-img">
-                <p>Standard Conical Cushions Medium Hard 92A, Gommini, blue<br>prezzo: € 9,99 <p>
-            </div>
-            <div>
-                <img src="static/immagini/gommini independent3.jpg" alt="error" class="df-img">
-                <p>Standard Cylinder Cushions Medium Hard 92A, Gommini, blue<br>prezzo: € 9,99 <p>
-            </div>
-            <div>
-                <img src="static/immagini/gommini independent4.jpg" alt="error" class="df-img">
-                <p>Standard Conical Cushions Hard 94A, Gommini, black<br>prezzo: € 9,99<p>
-            </div>
-            <div>
-                <img src="static/immagini/gommini independent5.jpg" alt="error" class="df-img">
-                <p>Standard Conical Cushions Soft 88A, Gommini, red<br>prezzo: € 9,99 <p>
-            </div>
-
+            
+            {%for image in risultato%}
+            <a href="/gomminiindependent_ris/{{image}}"><img src="static/immagini/gommini independent/{{image}}" /></href>
+            {%endfor%}
         </div>
-
-
     </div>
 </body>
 <footer>
