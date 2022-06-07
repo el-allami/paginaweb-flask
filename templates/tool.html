@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,45 +10,24 @@
     <link rel="stylesheet" href="static/tavola baker.css">
     <link rel="stylesheet" href="static/grid container {.css">
 </head>
-
+<body>
 <nav>
     <ul>
         <li><a href="/HOME"><b>HOME</b></a></li>
     </ul>
 </nav>
 
-<body>
+
     <div class="container">
         <div class="grid-container">
-            <div>
-                <img src="static/immagini/tool.jpg" alt="error" class="df-img">
-                <p><br>
-                    <h2>Mosaic</h2> <br>Y-Tool, Attrezzo da skate, green <br>prezzo:€ 22,99
-                </p>
-            </div>
-            <div>
-                <img src="static/immagini/tool2.jpg" alt="error" class="df-img">
-                <p><br>
-                    <h2>Unit</h2> <br>T-Tool, Attrezzo da skate, green <br>prezzo:€ 14,99
-                </p>
-            </div>
-            <div>
-                <img src="static/immagini/tool3.jpg" alt="error" class="df-img">
-                <p><br>
-                    <h2>Fixer</h2><br> Tool, Attrezzo da skate, orange-silver <br>prezzo:€ 19,99
-                </p>
-            </div>
-            <div>
-                <img src="static/immagini/tool4.jpg" alt="error" class="df-img">
-                <p>
-                    <h2>TITUS</h2> <br>Silver Collabo Tool, Attrezzo da skate, black-silver <br>prezzo:€ 29,99
-                </p>
-            </div>
+            
+            {%for image in risultato%}
+            <a href="/tool_ris/{{image}}"><img src="static/immagini/tool/{{image}}" /></href>
+            {%endfor%}
         </div>
-
     </div>
-
 </body>
+
 <footer>
     <p> El Allami Ali  - elallami.ali.nasr@iisgalvanimi.edu.it</p>
   </footer>

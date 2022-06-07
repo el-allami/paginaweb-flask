@@ -11,11 +11,11 @@ ceraskate1= pd.read_csv('static/file/ceraskate.csv')
 crashpants1= pd.read_csv('static/file/crashpants.csv')
 cuscinettibones1= pd.read_csv('static/file/cuscinettibones.csv')
 cuscinettibronsor1= pd.read_csv('static/file/cuscinettibronsor.csv')
-cuscinettiindipendent1=pd.read_csv('static/file/cuscinettiindipendent.csv')
 ginocchiere1=pd.read_csv('static/file/ginocchiere.csv')
 gomitiere1=pd.read_csv('static/file/gomitiere.csv')
 gombones1=pd.read_csv('static/file/gomminibones.csv')
 gomindipendent1=pd.read_csv('static/file/gomminiindependent.csv')
+tool1=pd.read_csv('static/file/tool.csv')
 
 
 skateparkdf= pd.read_csv("/workspace/paginaweb-flask/static/file/skatepark.csv")
@@ -204,7 +204,12 @@ def griptoymachine():
 
 @app.route('/tool', methods=['GET'])
 def tool():
-    return render_template("tool.html")
+    return render_template("tool.html",risultato=tool1['foto'].to_list())
+
+@app.route("/tool_ris/<foto>", methods=["GET"])
+def dettaglio_tool(foto):
+    tol=tool1[tool1['foto']==foto]
+    return render_template("tool_ris.html",modello=list(tol.modello),prezzo=list(tol.prezzo),foto=list(tol.foto))
 
 @app.route('/cera skate', methods=['GET'])
 def ceraskate():
@@ -276,15 +281,6 @@ def cuscinettibronsor():
 def dettaglio_bronsor(foto):
     bronsor1=cuscinettibronsor1[cuscinettibronsor1['foto']==foto]
     return render_template("cuscinettibronsor_ris.html",modello=list(bronsor1.modello),prezzo=list(bronsor1.prezzo),foto=list(bronsor1.foto))
-
-@app.route('/cuscinetti indipendent', methods=['GET'])
-def cuscinettiindipendent():
-     return render_template("cuscinetti indipendent.html",risultato=cuscinettiindipendent1['foto'].to_list())
-
-@app.route("/templates/cuscinettiindipendent_ris/<foto>", methods=["GET"])
-def dettaglio_indipendent(foto):
-    indipendent1=cuscinettiindipendent1[cuscinettiindipendent1['foto']==foto]
-    return render_template("cuscinettiindipendent_ris.html",modello=list(indipendent1.modello),prezzo=list(indipendent1.prezzo),foto=list(indipendent1.foto))
 
 
 @app.route('/gommini bones', methods=['GET'])
