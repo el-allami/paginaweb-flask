@@ -20,6 +20,11 @@ santa1=pd.read_csv('static/file/tavolasantacruz.csv')
 girl1=pd.read_csv('static/file/tavolegirl.csv')
 ace1=pd.read_csv('static/file/truckace.csv')
 indi1=pd.read_csv('static/file/truckindipendent.csv')
+trkven1=pd.read_csv('static/file/truckventure.csv')
+ruotbon1=pd.read_csv('static/file/ruotebones.csv')
+ruotspit1=pd.read_csv('static/file/ruotespitfire.csv')
+polsiere1=pd.read_csv('static/file/polsiere.csv')
+
 
 skateparkdf= pd.read_csv("/workspace/paginaweb-flask/static/file/skatepark.csv")
 skatepark= gpd.GeoDataFrame(skateparkdf,geometry=gpd.points_from_xy(skateparkdf.LON,skateparkdf.LAT))
@@ -161,10 +166,6 @@ def comesceglieredelleruote():
 def vitiace():
     return render_template("viti ace.html")
 
-@app.route('/viti bones', methods=['GET'])
-def vitibones():
-    return render_template("viti bones.html")
-
 @app.route('/viti independent', methods=['GET'])
 def vitiindependent():
     return render_template("viti independent.html")
@@ -232,7 +233,12 @@ def dettaglio_crashpants(foto):
 
 @app.route('/polsiere', methods=['GET'])
 def polsiere():
-    return render_template("polsiere.html")
+    return render_template("polsiere.html",risultato=polsiere1['foto'].to_list())
+
+@app.route("/polsiere_ris/<foto>", methods=["GET"])
+def dettaglio_polsiere(foto):
+    pols1=polsiere1[polsiere1['foto']==foto]
+    return render_template("polsiere_ris.html",modello=list(pols1.modello),prezzo=list(pols1.prezzo),foto=list(pols1.foto))
     
 @app.route('/gomitiere', methods=['GET'])
 def gomitiere():
@@ -287,15 +293,12 @@ def dettaglio_gomminiindependent(foto):
 
 @app.route('/ruote bones', methods=['GET'])
 def ruotebones():
-    return render_template("ruote bones.html")
+    return render_template("ruote bones.html",risultato=ruotbon1['foto'].to_list())
 
-@app.route('/ruote crupie', methods=['GET'])
-def ruotecrupie():
-    return render_template("ruote crupie.html")
-
-@app.route('/ruote oj', methods=['GET'])
-def ruoteoj():
-    return render_template("ruote oj.html")
+@app.route("/ruotebones_ris/<foto>", methods=["GET"])
+def dettaglio_ruotebones(foto):
+    bonru=ruotbon1[ruotbon1['foto']==foto]
+    return render_template("ruotebones_ris.html",modello=list(bonru.modello),prezzo=list(bonru.prezzo),foto=list(bonru.foto))
 
 @app.route('/ruote santacuz', methods=['GET'])
 def ruotesantacuz():
@@ -303,7 +306,12 @@ def ruotesantacuz():
 
 @app.route('/ruote spitfire', methods=['GET'])
 def ruotespitfire():
-    return render_template("ruote spitfire.html")
+    return render_template("ruote spitfire.html",risultato=ruotspit1['foto'].to_list())
+
+@app.route("/ruotespitfire_ris/<foto>", methods=["GET"])
+def dettaglio_ruotespitfire(foto):
+    spitru=ruotspit1[ruotspit1['foto']==foto]
+    return render_template("ruotespitfire_ris.html",modello=list(spitru.modello),prezzo=list(spitru.prezzo),foto=list(spitru.foto))
 
 @app.route('/tavola santacruz', methods=['GET'])
 def tavolasantacruz():
@@ -332,10 +340,6 @@ def dettaglio_truckace(foto):
     trukace=ace1[ace1['foto']==foto]
     return render_template("truckace_ris.html",modello=list(trukace.modello),prezzo=list(trukace.prezzo),foto=list(trukace.foto))
 
-@app.route('/truck bullet', methods=['GET'])
-def truckbullet():
-    return render_template("truck bullet.html")
-
 @app.route('/truck indipendent', methods=['GET'])
 def trukindipendent():
     return render_template("truck indipendent.html",risultato=indi1['foto'].to_list())
@@ -345,17 +349,14 @@ def dettaglio_trukindipendent(foto):
     trukindi=indi1[indi1['foto']==foto]
     return render_template("truckindipendent_ris.html",modello=list(trukindi.modello),prezzo=list(trukindi.prezzo),foto=list(trukindi.foto))
 
-@app.route('/truck tensor', methods=['GET'])
-def trucktensor():
-    return render_template("truck tensor.html")
-
-@app.route('/truck thunder', methods=['GET'])
-def truckthunder():
-    return render_template("truck thunder.html")
-
 @app.route('/truck venture', methods=['GET'])
 def truckventure():
-    return render_template("truck venture.html")
+    return render_template("truck venture.html",risultato=trkven1['foto'].to_list())
+
+@app.route("/truckventure_ris/<foto>", methods=["GET"])
+def dettaglio_truckventure(foto):
+    vent1=trkven1[trkven1['foto']==foto]
+    return render_template("truckventure_ris.html",modello=list(vent1.modello),prezzo=list(vent1.prezzo),foto=list(vent1.foto))
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=3247, debug=True)

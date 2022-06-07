@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+ 
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,41 +10,22 @@
     <link rel="stylesheet" href="static/tavola baker.css">
     <link rel="stylesheet" href="static/grid container {.css">
 </head>
-
+<body>
 <nav>
     <ul>
-        <li><a href="/pagina4"><b>TORNA INDIETRO</b></a></li>
+       <li><a href="/pagina4"><b>TORNA INDIETRO</b></a></li>
     </ul>
 </nav>
 
-<body>
+
     <div class="container">
         <div class="grid-container">
-            <div>
-                <img src="static/immagini/ruote bones.jpg" alt="error" class="df-img">
-                <p>STF Ghosted 103A V5 Sidecut, Ruote, white<br>prezzo: € 59,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/ruote bones2.jpg" alt="error" class="df-img">
-                <p>STF Iron Sun 99A V1 Standard, Ruote, white<br>prezzo:€ 54,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/ruote bones3.jpg" alt="error" class="df-img">
-                <p>STF Gustavo Notorious103A V1 Standard, Ruote, white<br>prezzo:€ 54,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/ruote bones4.jpg" alt="error" class="df-img">
-                <p>STF Homoki Down 4 Life 103A V5 Sidecut, Ruote, white<br>prezzo:€ 54,99 </p>
-            </div>
-            <div>
-                <img src="static/immagini/ruote bones5.jpg" alt="error" class="df-img">
-                <p>100's OG #17 V1 100A, Ruote, orange<br>prezzo: € 34,99</p>
-            </div>
-    
+            
+            {%for image in risultato%}
+            <a href="/ruotebones_ris/{{image}}"><img src="static/immagini/ruote bones/{{image}}" /></href>
+            {%endfor%}
         </div>
-
     </div>
-
 </body>
 <footer>
     <p> El Allami Ali  - elallami.ali.nasr@iisgalvanimi.edu.it</p>

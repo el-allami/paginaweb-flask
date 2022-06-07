@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,44 +10,22 @@
     <link rel="stylesheet" href="static/tavola baker.css">
     <link rel="stylesheet" href="static/grid container {.css">
 </head>
-
+<body>
 <nav>
     <ul>
         <li><a href="/pagina3"><b>TORNA INDIETRO</b></a></li>
     </ul>
 </nav>
 
-<body>
+
     <div class="container">
         <div class="grid-container">
-            <div>
-                <img src="static/immagini/truck venture.jpg" alt="error" class="df-img">
-                <p>High Legion Team Edition, Truck, silver-orange<br>prezzo:€ 37,99<br>SIZE 148mm</p>
-            </div>
-            <div>
-                <img src="static/immagini/truck venture2.jpg" alt="error" class="df-img">
-                <p>High Pro Mike Anderson Ventura, Truck, all-polished<br>prezzo:€ 37,99<br>SIZE 114mm</p>
-            </div>
-            <div>
-                <img src="static/immagini/truck venture3.jpg" alt="error" class="df-img">
-                <p> High V-Hollow Lights Anodized, Truck, red-silver<br>prezzo:€ 47,99<br>SIZE 145mm</p>
-            </div>
-            <div>
-                <img src="static/immagini/truck venture4.jpg" alt="error" class="df-img">
-                <p>High Pro Andrew Wilson Awake LTD, Truck, All Polished<br>prezzo:€ 37,99 <br>SIZE 148mm</p>
-            </div>
-            <div>
-                <img src="static/immagini/truck venture5.jpg" alt="error" class="df-img">
-                <p>High Pro Gilbert Crockett, Truck, gloss-black<br>prezzo:€ 37,99 <br>SIZE 151mm</p>
-            </div>
-            <div>
-                <img src="static/immagini/truck venture6.jpg" alt="error" class="df-img">
-                <p>Low V-Lights, Truck, silver-blue<br>prezzo: € 41,99<br>SIZE 139mm</p>
-            </div>
+            
+            {%for image in risultato%}
+            <a href="/truckventure_ris/{{image}}"><img src="static/immagini/truck venture/{{image}}" /></href>
+            {%endfor%}
         </div>
-
     </div>
-
 </body>
 <footer>
     <p> El Allami Ali  - elallami.ali.nasr@iisgalvanimi.edu.it</p>

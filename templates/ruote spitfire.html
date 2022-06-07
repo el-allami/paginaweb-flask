@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+ 
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,52 +10,22 @@
     <link rel="stylesheet" href="static/tavola baker.css">
     <link rel="stylesheet" href="static/grid container {.css">
 </head>
-
+<body>
 <nav>
     <ul>
-        <li><a href="/pagina4"><b>TORNA INDIETRO</b></a></li>
+       <li><a href="/pagina4"><b>TORNA INDIETRO</b></a></li>
     </ul>
 </nav>
 
-<body>
+
     <div class="container">
         <div class="grid-container">
-            <div>
-                <img src="static/immagini/ruote spitfire.jpg" alt="error" class="df-img">
-                <p>Formula Four Classic Repeaters 99A, Ruote, black<br>prezzo:€ 59,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/ruote spitfire2.jpg" alt="error" class="df-img">
-                <p>Formula Four Classic Repeaters 99A, Ruote, natural<br>prezzo:€ 59,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/ruote spitfire3.jpg" alt="error" class="df-img">
-                <p>Formula Four Classic Repeaters 99A, Ruote, natural-red<br>prezzo:€ 59,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/ruote spitfire4.jpg" alt="error" class="df-img">
-                <p>Jones Formula Four Classic 99A, Ruote, white<br>prezzo:€ 59,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/ruote spitfire5.jpg" alt="error" class="df-img">
-                <p>Formula Four Classic 99A, Ruote, green<br>prezzo:€ 59,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/ruote spitfire6.jpg" alt="error" class="df-img">
-                <p>Formula Four Classic 99A, Ruote, yellow<br>prezzo:€ 59,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/ruote spitfire7.jpg" alt="error" class="df-img">
-                <p>Formula Four Classic 99A, Ruote, orange<br>prezzo:€ 59,99</p>
-            </div>
-            <div>
-                <img src="static/immagini/ruote spitfire8.jpg" alt="error" class="df-img">
-                <p>Formula Four Classic 99A, Ruote, blue<br>prezzo:€ 59,99</p>
-            </div>
+            
+            {%for image in risultato%}
+            <a href="/ruotespitfire_ris/{{image}}"><img src="static/immagini/ruote spitfire/{{image}}" /></href>
+            {%endfor%}
         </div>
-
     </div>
-
 </body>
 <footer>
     <p> El Allami Ali  - elallami.ali.nasr@iisgalvanimi.edu.it</p>
