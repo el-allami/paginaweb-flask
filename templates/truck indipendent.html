@@ -1,60 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-
-    <meta charset="utf-8">
-    <title>Titolo pagina sito web</title>
-    <link href="static/pagina.css" rel="stylesheet">
-    <link href="static/style.css" rel="stylesheet">
+    <link href="static/pagina2.css" rel="stylesheet">
     <link rel="stylesheet" href="static/tavola baker.css">
     <link rel="stylesheet" href="static/grid container {.css">
-
 </head>
-
-
-<nav>
+<body>
+<nav> 
     <ul>
         <li><a href="/pagina3"><b>TORNA INDIETRO</b></a></li>
     </ul>
 </nav>
 
-<body>
+
     <div class="container">
         <div class="grid-container">
-            <div>
-                <img src="static/immagini/truck indipendent.jpg" alt="error" class="df-img">
-                <p>Hollow Reynolds Block Silver Mid, Truck, silver<br>prezzo: € 42,99 <br>SIZE 144mm</p>
-            </div>
-            <div>
-                <img src="static/immagini/truck indipendent2.jpg" alt="error" class="df-img">
-                <p>Stage 11 Bar Flat Black Standard, Truck, black<br>prezzo: € 42,99<br>SIZE 149mm </p>
-            </div>
-            <div>
-                <img src="static/immagini/truck indipendent3.jpg" alt="error" class="df-img">
-                <p>Stage 11 MID Pro Tiago Lemos, Truck, silver<br> prezzo: € 42,99 <br>INDIPENDENT x REINOLS <br>SIZE: 169mm</p>
-            </div>
-            <div>
-                <img src="static/immagini/truck indipendent4.jpg" alt="error" class="df-img">
-                <p> Stage 11 T-Hanger, Truck, silver <br>prezzo:€ 34,99 <br>SIZE 109mm</p>
-            </div>
-            <div>
-                <img src="static/immagini/truck indipendent5.jpg" alt="error" class="df-img">
-                <p> Stage 11 Polished Standard, Truck, silver<br>prezzo: € 34,99 <br>SIZE 139mm</p>
-            </div>
-            <div>
-                <img src="static/immagini/truck indipendent6.jpg" alt="error" class="df-img">
-                <p>Stage 11 Forged Titanium, Truck, silver-silver<br>prezzo: € 59,99 <br>SIZE 159mm</p>
-            </div>
-
+            
+            {%for image in risultato%}
+            <a href="/truckindipendent_ris/{{image}}"><img src="static/immagini/truck indipendent/{{image}}" /></href>
+            {%endfor%}
         </div>
     </div>
-
 </body>
 <footer>
     <p> El Allami Ali  - elallami.ali.nasr@iisgalvanimi.edu.it</p>

@@ -18,7 +18,8 @@ gomindipendent1=pd.read_csv('static/file/gomminiindependent.csv')
 tool1=pd.read_csv('static/file/tool.csv')
 santa1=pd.read_csv('static/file/tavolasantacruz.csv')
 girl1=pd.read_csv('static/file/tavolegirl.csv')
-
+ace1=pd.read_csv('static/file/truckace.csv')
+indi1=pd.read_csv('static/file/truckindipendent.csv')
 
 skateparkdf= pd.read_csv("/workspace/paginaweb-flask/static/file/skatepark.csv")
 skatepark= gpd.GeoDataFrame(skateparkdf,geometry=gpd.points_from_xy(skateparkdf.LON,skateparkdf.LAT))
@@ -324,15 +325,25 @@ def dettaglio_tavolegirl(foto):
 
 @app.route('/truck ace', methods=['GET'])
 def truckace():
-    return render_template("truck ace.html")
+    return render_template("truck ace.html",risultato=ace1['foto'].to_list())
+
+@app.route("/truckace_ris/<foto>", methods=["GET"])
+def dettaglio_truckace(foto):
+    trukace=ace1[ace1['foto']==foto]
+    return render_template("truckace_ris.html",modello=list(trukace.modello),prezzo=list(trukace.prezzo),foto=list(trukace.foto))
 
 @app.route('/truck bullet', methods=['GET'])
 def truckbullet():
     return render_template("truck bullet.html")
 
 @app.route('/truck indipendent', methods=['GET'])
-def truckindipendent():
-    return render_template("truck indipendent.html")
+def trukindipendent():
+    return render_template("truck indipendent.html",risultato=indi1['foto'].to_list())
+
+@app.route("/truckindipendent_ris/<foto>", methods=["GET"])
+def dettaglio_trukindipendent(foto):
+    trukindi=indi1[indi1['foto']==foto]
+    return render_template("truckindipendent_ris.html",modello=list(trukindi.modello),prezzo=list(trukindi.prezzo),foto=list(trukindi.foto))
 
 @app.route('/truck tensor', methods=['GET'])
 def trucktensor():

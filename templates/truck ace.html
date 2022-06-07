@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,44 +10,22 @@
     <link rel="stylesheet" href="static/tavola baker.css">
     <link rel="stylesheet" href="static/grid container {.css">
 </head>
-
-<nav>
+<body>
+<nav> 
     <ul>
         <li><a href="/pagina3"><b>TORNA INDIETRO</b></a></li>
     </ul>
 </nav>
 
-<body>
+
     <div class="container">
         <div class="grid-container">
-            <div>
-                <img src="static/immagini/truck ace.jpg" alt="error" class="df-img">
-                <p>77 AF1 , Truck, gold<br>prezzo: € 41,99<br>SIZE 159mm</p>
-            </div>
-            <div>
-                <img src="static/immagini/truck ace2.jpg" alt="error" class="df-img">
-                <p> Classic 44, Truck, matte-black<br>prezzo: € 34,99 <br>SIZE 149mm</p>
-            </div>
-            <div>
-                <img src="static/immagini/truck ace3.jpg" alt="error" class="df-img">
-                <p> Classic 66, Truck, polished-red<br>prezzo: € 36,99<br>SIZE 151mm</p>
-            </div>
-            <div>
-                <img src="static/immagini/truck ace4.jpg" alt="error" class="df-img">
-                <p>22 AF1, Truck, matte-black<br>prezzo: € 41,99 <br>SIZE 109mm</p>
-            </div>
-            <div>
-                <img src="static/immagini/truck ace5.jpg" alt="error" class="df-img">
-                <p> Classic 55, Truck, sapphire<br>prezzo: € 34,99<br>SIZE 139mm</p>
-            </div>
-            <div>
-                <img src="static/immagini/truck ace6.jpg" alt="error" class="df-img">
-                <p>Classic 66, Truck, silver<br>prezzo: € 33,99 <br>SIZE 151mm</p>
-            </div>
-
+            
+            {%for image in risultato%}
+            <a href="/truckace_ris/{{image}}"><img src="static/immagini/truck ace/{{image}}" /></href>
+            {%endfor%}
         </div>
     </div>
-
 </body>
 <footer>
     <p> El Allami Ali  - elallami.ali.nasr@iisgalvanimi.edu.it</p>
