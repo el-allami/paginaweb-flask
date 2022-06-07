@@ -16,6 +16,8 @@ gomitiere1=pd.read_csv('static/file/gomitiere.csv')
 gombones1=pd.read_csv('static/file/gomminibones.csv')
 gomindipendent1=pd.read_csv('static/file/gomminiindependent.csv')
 tool1=pd.read_csv('static/file/tool.csv')
+santa1=pd.read_csv('static/file/tavolasantacruz.csv')
+girl1=pd.read_csv('static/file/tavolegirl.csv')
 
 
 skateparkdf= pd.read_csv("/workspace/paginaweb-flask/static/file/skatepark.csv")
@@ -153,26 +155,6 @@ def comesceglieredeitruck():
 @app.route('/come scegliere delle ruote', methods=['GET'])
 def comesceglieredelleruote():
     return render_template("come scegliere delle ruote.html")
-
-@app.route('/maglietta uomo nike sb', methods=['GET'])
-def magliettauomonikesb():
-    return render_template("maglietta uomo nike sb.html")
-
-@app.route('/magliette uomo adida-skateboard', methods=['GET'])
-def maglietteuomoadidaskateboard():
-    return render_template("magliette uomo adida-skateboard.html")
-
-@app.route('/magliette uomo anti-hero', methods=['GET'])
-def maglietteuomoantihero():
-    return render_template("magliette uomo anti-hero.html")
- 
-@app.route('/magliette uomo baker', methods=['GET'])
-def maglietteuomobaker():
-    return render_template("magliette uomo baker.html")
-
-@app.route('/magliette uomo thrasher', methods=['GET'])
-def maglietteuomothrasher():
-    return render_template("magliette uomo thrasher.html")
 
 @app.route('/viti ace', methods=['GET'])
 def vitiace():
@@ -324,27 +306,21 @@ def ruotespitfire():
 
 @app.route('/tavola santacruz', methods=['GET'])
 def tavolasantacruz():
-    return render_template("tavola santacruz.html")
+    return render_template("tavola santacruz.html",risultato=santa1['foto'].to_list())
 
-@app.route('/tavole baker', methods=['GET'])
-def tavolebaker():
-    return render_template("tavole baker.html")
-
-@app.route('/tavole element', methods=['GET'])
-def tavoleelement():
-    return render_template("tavole element.html")
+@app.route("/tavolasantacruz_ris/<foto>", methods=["GET"])
+def dettaglio_tavolasantacruz(foto):
+    san=santa1[santa1['foto']==foto]
+    return render_template("tavolasantacruz_ris.html",modello=list(san.modello),prezzo=list(san.prezzo),foto=list(san.foto))
 
 @app.route('/tavole girl', methods=['GET'])
 def tavolegirl():
-    return render_template("tavole girl.html")
+    return render_template("tavole girl.html",risultato=girl1['foto'].to_list())
 
-@app.route('/tavole jart', methods=['GET'])
-def tavolejart():
-    return render_template("tavole jart.html")
-
-@app.route('/tavole supreme 8.5', methods=['GET'])
-def tavolesupreme():
-    return render_template("tavole supreme 8.5.html")
+@app.route("/tavolegirl_ris/<foto>", methods=["GET"])
+def dettaglio_tavolegirl(foto):
+    tavgirl=girl1[girl1['foto']==foto]
+    return render_template("tavolegirl_ris.html",modello=list(tavgirl.modello),prezzo=list(tavgirl.prezzo),foto=list(tavgirl.foto))
 
 @app.route('/truck ace', methods=['GET'])
 def truckace():

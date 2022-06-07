@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="static/tavola baker.css">
     <link rel="stylesheet" href="static/grid container {.css">
 </head>
-
+<body>
 <nav>
     <ul>
         <li><a href="/pagina2"><b>TORNA INDIETRO</b></a></li>
@@ -18,50 +18,13 @@
 </nav>
 
 
-<body>
     <div class="container">
         <div class="grid-container">
-            <div>
-                <img src="static/immagini/tavola santacruz.jpg" alt="error" class="df-img">
-                <p> Delfino Tarot VX, Tavola, multicolored<br> prezzo: € 109,99 <br>GRIP COMPRESO<br>SIZE 8.5</p>
-
-            </div>
-            <div>
-                <img src="static/immagini/tavola santacruz2.jpg" alt="error" class="df-img">
-                <p> Transcend Dots VX, Tavola, black<br> prezzo: € 94,99 <br>GRIP COMPRESO<br>SIZE 8.5</p>
-            </div>
-            <div>
-                <img src="static/immagini/tavola santacruz3.jpg" alt="error" class="df-img">
-                <p>Wooten Crest VX, Tavola, multicolored <br> prezzo: € 109,99 <br>GRIP COMPRESO<br>SIZE 8.5</p>
-
-            </div>
-            <div>
-                <img src="static/immagini/tavola santacruz4.jpg" alt="error" class="df-img">
-                <p>Screaming Hand, Tavola, white <br> prezzo: € 79,99 <br>GRIP COMPRESO<br>SIZE 8.5</p>
-
-            </div>
-            <div>
-                <img src="static/immagini/tavola santacruz5.jpg" alt="error" class="df-img">
-                <p>No Pattern Dot Everslick, Tavola, multicolored<br> prezzo: € 72,99 <br>GRIP COMPRESO<br>SIZE 8.5</p>
-
-            </div>
-            <div>
-                <img src="static/immagini/tavola santacruz6.jpg" alt="error" class="df-img">
-                <p>Johnson Other Side, Tavola, black <br> prezzo: € 79,99 <br>GRIP COMPRESO<br>SIZE 8.5</p>
-            </div>
-            <div>
-                <img src="static/immagini/tavola santacruz7.jpg" alt="error" class="df-img">
-                <p> Screaming Hand, Tavola, green<br> prezzo: € 79,99 <br>GRIP COMPRESO<br>SIZE 8.5</p>
-            </div>
-            <div>
-                <img src="static/immagini/tavola santacruz8.jpg" alt="error" class="df-img">
-                <p> Braun Drum Kit Everslick, Tavola, green<br> prezzo: € 79,99 <br>GRIP COMPRESO<br>SIZE 8.5</p>
-            </div>
-         
-
+            
+            {%for image in risultato%}
+            <a href="/tavolasantacruz_ris/{{image}}"><img src="static/immagini/tavola santacruz/{{image}}" /></href>
+            {%endfor%}
         </div>
-
-
     </div>
 </body>
 <footer>
